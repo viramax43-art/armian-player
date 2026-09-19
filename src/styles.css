@@ -806,16 +806,17 @@ input[type='range'].fill-range:active::-webkit-slider-thumb {
   z-index: 1;
   display: block;
   pointer-events: none;
+  contain: paint;
 }
 
 .scene-car {
   z-index: 2;
   inset: auto;
   left: 50%;
-  top: 53%;
-  width: min(72%, 680px);
+  top: 59%;
+  width: min(78%, 740px);
   height: auto;
-  max-height: 58%;
+  max-height: 62%;
   object-fit: contain;
   object-position: center center;
   transform: translate3d(-50%, -50%, 0);

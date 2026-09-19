@@ -781,20 +781,52 @@ input[type='range'].fill-range:active::-webkit-slider-thumb {
   background: #000;
 }
 
+.scene-backdrop,
+.scene-canvas,
+.scene-car {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+.scene-backdrop {
+  z-index: 0;
+  object-fit: cover;
+  transform: scale(1.025);
+}
+
 .scene-canvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: 1;
   display: block;
   pointer-events: none;
+}
+
+.scene-car {
+  z-index: 2;
+  inset: auto;
+  left: 50%;
+  top: 53%;
+  width: min(72%, 680px);
+  height: auto;
+  max-height: 58%;
+  object-fit: contain;
+  object-position: center center;
+  transform: translate3d(-50%, -50%, 0);
+  transform-origin: center center;
+  will-change: transform;
 }
 
 .scene-vignette {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 3;
   pointer-events: none;
   background:
     radial-gradient(ellipse at center, transparent 32%, rgba(0, 0, 0, 0.5) 78%, rgba(0, 0, 0, 0.82) 100%),
@@ -805,7 +837,7 @@ input[type='range'].fill-range:active::-webkit-slider-thumb {
   position: absolute;
   left: 24px;
   bottom: 24px;
-  z-index: 2;
+  z-index: 4;
   max-width: min(420px, 70%);
   pointer-events: none;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);

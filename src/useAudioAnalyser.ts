@@ -10,8 +10,8 @@ export type AnalyserFrame = {
 }
 
 const BAND_COUNT = 28
-/** ~20 fps — enough for bass pulse, far cheaper on GPU */
-const TICK_MS = 50
+/** ~15 fps — enough for bass pulse, far cheaper on GPU */
+const TICK_MS = 66
 
 type HookOpts = {
   audioRef: RefObject<HTMLAudioElement | null>

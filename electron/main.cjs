@@ -251,16 +251,7 @@ function createWindow() {
     /* older electron */
   }
 
-  // With live wallpaper: don't stay minimized — hide to tray-like state
-  mainWindow.on('minimize', () => {
-    if (!wallpaperEnabled) return
-    setTimeout(() => {
-      if (mainWindow && !mainWindow.isDestroyed() && wallpaperEnabled) {
-        mainWindow.restore()
-        mainWindow.hide()
-      }
-    }, 0)
-  })
+  // Normal minimize — stay on the taskbar (do not hide when wallpaper is on)
 
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()

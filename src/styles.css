@@ -795,7 +795,9 @@ input[type='range'].fill-range:active::-webkit-slider-thumb {
 .scene-backdrop {
   z-index: 0;
   object-fit: cover;
-  transform: scale(1.025);
+  transform: scale(1.02);
+  transform-origin: center center;
+  will-change: transform;
 }
 
 .scene-canvas {
